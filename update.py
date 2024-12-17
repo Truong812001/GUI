@@ -19,7 +19,7 @@ folder_bin = r'D:\1_GITHUB\TEST\BIN'
 # Xóa file .exe trong folder_bin
 for file in os.listdir(folder_bin):
     file_path = os.path.join(folder_bin, file)
-    if os.path.isfile(file_path) and file_path.endswith('.exe'):
+    if os.path.isfile(file_path) and file_path.endswith('.py'):
         try:
             # Kiểm tra nếu file đang sử dụng, sau đó xóa
             os.remove(file_path)
