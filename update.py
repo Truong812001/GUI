@@ -1,1 +1,1 @@
-sdfafprint('a')
+print('a')
