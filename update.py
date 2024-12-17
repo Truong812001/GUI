@@ -11,7 +11,7 @@ def log_error(message):
         log_file.write(message + '\n')
 
 # Đảm bảo đợi đủ lâu trước khi thực thi xóa
-time.sleep(10)
+time.sleep(2)
 print('Đợi xong')
 
 folder_build = r'D:\1_GITHUB\TEST\Build'
