@@ -1,6 +1,6 @@
 import os
 import time
-time.sleep(2)
+time.sleep(10)
 print('doi xong ')
 folder_build = r'D:\1_GITHUB\TEST\Build'
 for file in os.listdir(folder_build):
