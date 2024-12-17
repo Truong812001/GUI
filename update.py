@@ -16,20 +16,6 @@ print('Đợi xong')
 
 folder_build = r'D:\1_GITHUB\TEST\Build'
 folder_bin = r'D:\1_GITHUB\TEST\BIN'
-
-# Kiểm tra nếu file update.py tồn tại
-update_file_path = os.path.join(folder_build, "update.py")
-if os.path.exists(update_file_path):
-    subprocess.Popen(["python", update_file_path])
-    sys.exit()
-
-else:
-    # Nếu không có file update.py, xóa toàn bộ folder_build
-    if not os.path.exists(update_file_path):
-        shutil.rmtree(folder_build)  # Xóa toàn bộ folder_build
-        os.makedirs(folder_build)
-        print('Không có file update.py')
-
 # Xóa file .exe trong folder_bin
 for file in os.listdir(folder_bin):
     file_path = os.path.join(folder_bin, file)
