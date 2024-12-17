@@ -18,8 +18,8 @@ def kill_process_by_name(process_name):
     return False
 
 # Buộc dừng GUI.exe
-kill_process_by_name("GUI_v4.py")
-
+if not kill_process_by_name("GUI_v4.py"):
+    kill_process_by_name("python.exe")
 def schedule_self_deletion(self,folder_build):
 
     current_file = os.path.join(folder_build,"update.py")
