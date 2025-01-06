@@ -11,27 +11,27 @@ def log_error(message):
         log_file.write(message + '\n')
 
 # Đảm bảo đợi đủ lâu trước khi thực thi xóa
-time.sleep(2)
+#time.sleep(2)
 print('Đợi xong')
 
-folder_build = r'D:\1_GITHUB\TEST\Build'
-folder_bin = r'D:\1_GITHUB\TEST\BIN'
+#folder_build = r'D:\1_GITHUB\TEST\Build'
+#folder_bin = r'D:\1_GITHUB\TEST\BIN'
 # Xóa file .exe trong folder_bin
-for file in os.listdir(folder_bin):
-    file_path = os.path.join(folder_bin, file)
-    if os.path.isfile(file_path) and file_path.endswith('.exe'):
-        try:
-            # Kiểm tra nếu file đang sử dụng, sau đó xóa
-            os.remove(file_path)
-            print(f"Đã xóa file: {file_path}")
-        except PermissionError as e:
-            error_message = f"Không thể xóa file {file_path} do lỗi quyền truy cập: {str(e)}"
-            print(error_message)
-            log_error(error_message)  # Ghi lỗi vào file log
-        except Exception as e:
-            error_message = f"Không thể xóa file {file_path} do lỗi: {str(e)}"
-            print(error_message)
-            log_error(error_message)  # Ghi lỗi vào file log
+#for file in os.listdir(folder_bin):
+#    file_path = os.path.join(folder_bin, file)
+#    if os.path.isfile(file_path) and file_path.endswith('.exe'):
+#        try:
+#            # Kiểm tra nếu file đang sử dụng, sau đó xóa
+#            os.remove(file_path)
+#            print(f"Đã xóa file: {file_path}")
+#        except PermissionError as e:
+#            error_message = f"Không thể xóa file {file_path} do lỗi quyền truy cập: {str(e)}"
+#            print(error_message)
+#            log_error(error_message)  # Ghi lỗi vào file log
+#        except Exception as e:
+#            error_message = f"Không thể xóa file {file_path} do lỗi: {str(e)}"
+#            print(error_message)
+#            log_error(error_message)  # Ghi lỗi vào file log
 
 
 
