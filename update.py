@@ -1,9 +1,10 @@
 import os
 import shutil
 import time
-
+import subprocess
+import sys
 # Tạo một file log để lưu lỗi
-log_file_path = r'D:\1_GITHUB\TEST\error_log.txt'
+
 
 # Hàm ghi ngoại lệ vào file log
 def log_error(message):
@@ -12,7 +13,7 @@ def log_error(message):
 
 # Đảm bảo đợi đủ lâu trước khi thực thi xóa
 #time.sleep(2)
-print('Đợi xong')
+
 
 #folder_build = r'D:\1_GITHUB\TEST\Build'
 #folder_bin = r'D:\1_GITHUB\TEST\BIN'
@@ -37,21 +38,25 @@ print('Đợi xong')
 
 
 
-# Buộc dừng GUI.exe
-# def schedule_self_deletion(self,folder_build):
 
-#     current_file = os.path.join(folder_build,"update.py")
-#     delete_script_path = os.path.join(folder_build, "delete_self.bat")
+def schedule_self_deletion(self,folder_del):
 
-
-#     with open(delete_script_path, "w") as f:
-#         f.write('@echo off\n')
-#         f.write('timeout /t 2 > nul\n')  
-#         f.write(f'del "{current_file}" > nul\n')  
-#         f.write(f'del "{delete_script_path}" > nul\n') 
-#         f.write('exit\n')
+    current_file = os.path.join(folder_del,"update.py")
+    delete_script_path = os.path.join(folder_del, "delete_self.bat")
 
 
-#     subprocess.Popen(delete_script_path, shell=True)
+    with open(delete_script_path, "w") as f:
+        f.write('@echo off\n')
+        f.write('timeout /t 2 > nul\n')  
+        f.write(f'del "{current_file}" > nul\n')  
+        f.write(f'del "{delete_script_path}" > nul\n') 
+        f.write('exit\n')
 
-#     sys.exit(0)
+
+    subprocess.Popen(delete_script_path, shell=True)
+
+    sys.exit(0)
+
+if __name__ == '__main__':
+    folder_del = sys.argv[1]
+    schedule_self_deletion(folder_del)
