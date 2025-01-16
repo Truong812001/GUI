@@ -39,7 +39,7 @@ def log_error(message):
 
 
 
-def schedule_self_deletion(self,folder_del):
+def schedule_self_deletion(folder_del):
 
     current_file = os.path.join(folder_del,"update.py")
     delete_script_path = os.path.join(folder_del, "delete_self.bat")
